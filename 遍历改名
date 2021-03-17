@@ -17,3 +17,12 @@ for parent, dirnames, filenames in os.walk(rootdir):  # 三个参数：分别返
         # os.rename(os.path.join(parent, filename), os.path.join(parent, filename[:]+'.bmp'))  # 重命名
         os.rename(os.path.join(parent, filename), os.path.join(parent, 'origin' + str(i) + '.jpg'))  # 重命名
         # print(i)
+        
+        
+        assemble.append(filename+'对应'+str(s))
+
+str1 = '\n'
+f=open("parameter_depth.txt",'w')
+f.write(str1.join(assemble))
+f.close()
+print(assemble)
